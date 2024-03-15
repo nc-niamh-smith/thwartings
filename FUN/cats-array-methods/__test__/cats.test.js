@@ -68,8 +68,24 @@ describe('giftCatToys', () => {
 })
 
 describe('updateOwner', () => {
-    test.todo('returns an array')
-    test.todo('can add an owner property to a single-object array')
-    test.todo('can add an owner property to a multi-object array')
-    test.todo('does not mutate original array')
+    xtest('returns an array', () => {
+        const catsArray = [];
+        const ownerString = "";
+        const actual = updateOwner(catsArray, ownerString);
+        expect(Array.isArray(actual)).toBe(true);
+    })
+    xtest('can add an owner property to a single-object array', () => {
+        const catsArray = [{cat: 'Mojo Jojo'}]
+        const ownerstring = "Niamh"
+        const actual = updateOwner(catsArray, ownerstring)
+        const expected = [{cat: 'Mojo Jojo', owner: 'Niamh'}]
+        expect(actual).toEqual(expected)
+    })
+    xtest('can add an owner property to a multi-object array', () => {
+        const catsArray = [{cat: 'Mojo Jojo'}, {cat: 'Hiro'}]
+        const ownerString = "Niamh";
+        const actual = updateOwner(catsArray, ownerString);
+        const expected = [{cat: 'Mojo Jojo', owner: 'Niamh'}, {cat: 'Hiro', owner: 'Niamh'}];
+        expect(actual).toEqual(expected)
+    })
 })

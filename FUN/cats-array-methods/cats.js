@@ -2,7 +2,7 @@ function deFleadCats(cats) {}
 
 function giftCatToys(cats, toys) {}
 
-function updateOwner() {}
+function updateOwner(cats, owner) {}
 
 
 module.exports = {deFleadCats, giftCatToys, updateOwner}
