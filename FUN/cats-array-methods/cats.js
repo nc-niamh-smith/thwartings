@@ -1,6 +1,6 @@
 function deFleadCats(cats) {}
 
-function giftCatToys() {}
+function giftCatToys(cats, toys) {}
 
 function updateOwner() {}
 

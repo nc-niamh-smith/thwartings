@@ -5,6 +5,7 @@ describe('deFleaCats', () => {
         const inputArray = []
         const actual = deFleadCats(inputArray)
         expect(actual).not.toBe(inputArray)
+        expect(actual).not.toBe(undefined)
     })
     xtest('identifies when an element meets the requirement in a single-object array', () => {
         const catsArray = [{cat: 'Mojo Jojo', fleaTreated: true}]
@@ -33,12 +34,37 @@ describe('deFleaCats', () => {
 })
 
 describe('giftCatToys', () => {
-    test.todo('returns a new array')
-    test.todo('populates a single-cat object with a toy from the secondary array')
-    test.todo('populates a multi-cat object array with items from the secondary array')
-    test.todo('does not mutate the cat array')
-    test.todo('does not mutate the toys array')
-    test.todo('does not mutate the inner cat objects')
+    xtest('returns a new array', () => {
+        const catsArray = [];
+        const toysArray = [];
+        const actual = giftCatToys(catsArray, toysArray)
+        expect(actual).not.toBe(undefined)
+        expect(actual).not.toBe(catsArray)
+        expect(actual).not.toBe(toysArray)
+    })
+    xtest('populates a single-cat object with a toy from the secondary array', () => {
+        const catsArray = [{cat: 'Hiro'}];
+        const toysArray = ["mouse"];
+        const expected = [{cat: 'Hiro', toy: 'mouse'}]
+        const actual = giftCatToys(catsArray, toysArray)
+        expect(actual).toEqual(expected)
+    })
+    xtest('populates a multi-cat object array with items from the secondary array', () => {
+        const catsArray = [{cat: 'Hiro'}, {cat: 'Mojo Jojo'}];
+        const toysArray = ["mouse", "stick"];
+        const expected = [{cat: 'Hiro', toy: 'mouse'}, {cat: 'Mojo Jojo', toy: 'stick'}]
+        const actual = giftCatToys(catsArray, toysArray)
+        expect(actual).toEqual(expected)
+    })
+    xtest('does not mutate either array', () => {
+        const catsArray = [{cat: 'Hiro'}, {cat: 'Mojo Jojo'}];
+        const toysArray = ["mouse", "stick"];
+        const catsArrayCopy = [{cat: 'Hiro'}, {cat: 'Mojo Jojo'}];
+        const toysArrayCopy = ["mouse", "stick"];
+        giftCatToys(catsArray, toysArray);
+        expect(catsArray).toEqual(catsArrayCopy);
+        expect(toysArray).toEqual(toysArrayCopy)
+    })
 })
 
 describe('updateOwner', () => {

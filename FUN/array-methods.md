@@ -12,9 +12,9 @@ I want a function that when passed an array populated with cat objects, returns 
 ### giftCatToys
 I want a function that when passed an array populated with cat objects and an array with items, it returns a new array of the same length that updates each cat object with a new 'item'. You can assume that both arrays passed are of the same length.
 
-``` giftCatsToys([{cat: 'Mojo Jojo', fleaTreated: true}, {cat: 'Azula', fleaTreated: true}, {cat: 'Hiro', fleaTreated: true}], ["mouse", "ball", "stick"]) ```
+``` giftCatsToys([{cat: 'Mojo Jojo'}, {cat: 'Azula'}, {cat: 'Hiro'}], ["mouse", "ball", "stick"]) ```
 
-``` returns [{cat: 'Mojo Jojo', fleaTreated: true, toy: 'mouse'}, {cat: 'Azula', fleaTreated: true, toy: 'ball'}, {cat: 'Hiro', fleaTreated: true, toy: 'stick'}] ```
+``` returns [{cat: 'Mojo Jojo', toy: 'mouse'}, {cat: 'Azula', toy: 'ball'}, {cat: 'Hiro', toy: 'stick'}] ```
 
 ### updateOwner
 I want a function that when passed an array populated with cat objects and an owner string, it returns the same array, updated with an added property. You can assume that both the array and string will always be passed.
